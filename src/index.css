@@ -11,6 +11,10 @@ body {
     text-align: center;
 }
 
+.window-text-centered {
+    text-align: center;
+}
+
 #root {
     display: flex;
     flex-direction: column;
