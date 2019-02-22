@@ -5,6 +5,7 @@ class App extends Component {
     return (
       <>
       <p>test</p>
+      <p>test2</p>
       </>
     )
   }
