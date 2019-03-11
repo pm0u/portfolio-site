@@ -1,13 +1,36 @@
-html, body, #app, #app>div, #root {
-  height: 100%
+html,
+body,
+#app,
+#app>div,
+#root {
+    height: 100%;
+    font-family: 'Terminus', monospace;
+    overflow: hidden;
+}
+
+.nav ul {
+    list-style-type: none;
+}
+
+aside {
+    padding-left: 5%;
+    padding-right: 3%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+main {
+    overflow-y: auto;
 }
 
 body {
-    background: #f9f5d7;
-    font-family: 'Terminus', monospace;
+    background-image: url('https://i.ibb.co/KzL4hJR/meowntains2-cropped.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .window-heading {
+    grid-area: header;
     text-align: center;
 }
 
@@ -15,40 +38,146 @@ body {
     text-align: center;
 }
 
+.nav {
+    border-right: 2px solid #7c6f64;
+    grid-area: nav;
+}
+
 #root {
+    width: 70%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .window-shadowed {
-	width: 98%;	
-	height: 75%;
-	position: absolute;
-	background-color: #d5c4a1;
-	border-left: .6ch solid #d5c4a1;
-	border-right: .6ch solid #d5c4a1;
-	border-top: 1ch solid #d5c4a1;
-	border-bottom: 1ch solid #d5c4a1;
-	box-sizing: border-box;
+    width: 70%;
+    height: 75%;
+    position: absolute;
+    margin-left: 15%;
+    background-color: #d5c4a1;
+    border-left: .6ch solid #d5c4a1;
+    border-right: .6ch solid #d5c4a1;
+    border-top: 1ch solid #d5c4a1;
+    border-bottom: 1ch solid #d5c4a1;
+    box-sizing: border-box;
+}
+
+.window-contents {
+    grid-area: content;
 }
 
 .window-inner {
-	width: 100%;
-	height: 100%;
-	margin:auto;
-	border: 2px solid #7c6f64;
-	box-sizing:border-box;
+    padding-bottom: 10px;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    border: 2px solid #7c6f64;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: min-content auto;
+    grid-template-areas:
+        "header header"
+        "nav content"
 }
 
 .window-shadowed:after {
-	content: "";
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 30px;	
-	left: 20px;	
-	z-index: -2;
-	background-image: url('https://i.ibb.co/vsKjWzM/shadowchar.png');
-	background-repeat: repeat;
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    z-index: -2;
+    background-image: url('https://i.ibb.co/vsKjWzM/shadowchar.png');
+    background-repeat: repeat;
+}
+
+.photo-shadowed:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    z-index: -2;
+    background-image: url('https://i.ibb.co/vsKjWzM/shadowchar.png');
+    background-repeat: repeat;
+}
+
+.link-button {
+    background-color: transparent;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline;
+    margin: 0;
+    font-size: 1em;
+    font-family: Terminal, monospace;
+}
+
+.side {
+    width: 100%;
+    padding: 0 0 0 10%;
+}
+
+.link-button:hover {
+    background-color: #7c6f64;
+    color: #d5c4a1;
+}
+
+.selected {
+    background-color: #3c3836;
+    color: #d5c4a1;
+}
+
+.selected:before {
+    content: '>';
+    position: absolute;
+    left: 3%;
+    color: #d5c4a1;
+}
+
+.selected:hover {
+    background-color: #3c3836;
+}
+
+section {
+    padding: 0 5% 0 5%;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--bg-highlights);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--base1);
+}
+
+a {
+    text-decoration: none;
+}
+
+.modal {
+    display: inline;
+    margin: auto;
+    width: 30%;
+}
+
+.image-centerer {
+    text-align: center;
 }
